@@ -1,13 +1,18 @@
 *{
     margin: 0;
     padding: 0;
-    font-family:'poppins' , sans-serif;
+    font-family: 'poppins' , sans-serif;
     box-sizing: border-box;
 }
 a{
     text-decoration: none;
     color: #5a5a5a;
 }
+
+  body {
+      background-color: white;
+      transition: background-color 0.5s ease;
+  }
 
 img{
     cursor: pointer;
@@ -30,7 +35,7 @@ nav{
 
 
 .nav-right img{
-    width: 25px;
+    width: 32px;
     margin-right: 25px;
 }
 
@@ -503,6 +508,214 @@ margin-right: 20px;
 
 }
 
+/* mic css */
+.mic-button {
+    background-color: transparent;
+    border: 2px solid #e50914;
+    color: #fff;
+    font-size: 14px;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-right: 20px;
+  }
+  
+  .mic-button:hover {
+    background-color: #e50914;
+    box-shadow: 0 1px 15px rgba(229, 9, 20, 0.6);
+  }
+  
+  /* top nav */
+
+  /* Sidebar navs hover and active */
+.nav-item,
+.top-icon {
+  transition: all 0.3s ease;
+  border-radius: 50%;
+  padding: 3px;
+  cursor: pointer;
+}
+
+/* Hover effect like YouTube */
+.top-icon:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+/* Active sidebar item — red filter */
+.active-nav {
+  background-color: rgba(0, 0, 0, 0.1) !important;
+  filter: invert(21%) sepia(99%) saturate(7483%) hue-rotate(358deg) brightness(97%) contrast(107%) !important;
+}
+
+/* Active top icon — glowing shadow */
+.active-top-icon {
+  animation: glow 1s ease-in-out infinite alternate;
+  background-color: rgba(247, 70, 70, 0.881) !important;
+}
+
+/* Glowing shadow animation */
+@keyframes glow {
+  from {
+    box-shadow: 0 0 10px rgba(86, 86, 86, 0.4);
+  }
+  to {
+    box-shadow: 0 0 10px rgba(86, 86, 86, 0.4);
+  }
+}
 
 
+.video-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+    gap: 20px;
+  }
 
+  .video-card {
+    background-color: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    cursor: pointer;
+    transition: transform 0.2s ease;
+  }
+
+  .video-card:hover {
+    transform: scale(1.03);
+  }
+
+  .thumbnail {
+    width: 100%;
+    height: 130px;
+    object-fit: cover;
+  }
+
+  .video-info {
+    padding: 10px;
+  }
+
+  .title {
+    font-weight: bold;
+    font-size: 14px;
+    margin-bottom: 5px;
+  }
+
+  .channel,
+  .meta {
+    font-size: 12px;
+    color: #555;
+  }
+
+  /* Video player modal */
+  .modal {
+    display: none;
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.7);
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+  }
+
+  .modal video {
+    width: 90%;
+    max-width: 720px;
+    border-radius: 10px;
+  }
+
+  .modal.show {
+    display: flex;
+  }
+
+
+  /* Mic Button Styles */
+.mic-btn {
+    font-size: 24px;
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+    color: #0a0a0a;
+    padding: 10px;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    border-radius: 50%;
+    background-color: #ff4081;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+
+
+  /* Dialog Box Styling */
+.mic-dialog {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: black;
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
+    z-index: 1000;
+    width: 80%;
+    max-width: 400px;
+    text-align: center;
+}
+
+.mic-dialog.open {
+    display: block; /* Make the dialog visible */
+}
+
+.mic-dialog-content p {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 15px;
+    letter-spacing: 1px;
+}
+
+.mic-dialog button {
+    background-color: #f1f1f1;
+    color: black;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.mic-dialog button:hover {
+    background-color: #ddd;
+}
+
+/* filter css */
+.filter-bar {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 25px;
+    flex-wrap: wrap;
+    margin-top: 16px;
+  }
+  
+  .filter-btn {
+    background-color: #f0f0f0;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 18px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+  
+  .filter-btn:hover {
+    background-color: #dcdcdc;
+  }
+  
+  .filter-btn.active {
+    background-color: #000;
+    color: white;
+  }

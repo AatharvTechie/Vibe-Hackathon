@@ -8,40 +8,52 @@
     <title>Youtube Clone</title>
 </head>
 <body>
-    
+
     <nav class="flex-div">
         <div class="nav-left flex-div">
             <img src="./images/menu.png" class="menu-icon" alt="" srcset="">
             <img src="./images/logo.png" class="logo" alt="" srcset="">
         </div>
+            
         <div class="nav-middle flex-div">
-           <div class="search-box flex-div">
-               <input type="text" placeholder="Search..">
-               <img src="./images/search.png" alt="" srcset="">
-           </div>
-           <img src="./images/voice-search.png" class="mic-icon" alt="" srcset="">
+            <div class="search-box flex-div">
+                <input type="text" placeholder="Search.." id="searchBox">
+                <img src="./images/search.png" alt="" srcset="">
+            </div>
+            <img src="./images/voice-search.png" class="mic-icon" alt="" srcset="">
         </div>
+        
         <div class="nav-right flex-div">
-            <img src="./images/upload.png" alt="" srcset="">
-            <img src="./images/more.png" alt="" srcset="">
-            <img src="./images/notification.png" alt="" srcset="">
-            <img src="./images/nilava.jpeg" class="user-icon" alt="" srcset="">
+            <button class="mic-button" onclick="toggleListening()" title="Automate Task">    
+                🎤
+            </button>
+            <img src="./images/upload.png" id="nav-upload" class="top-icon" alt="upload" title="Upload">
+            <img src="./images/more.png" id="nav-more" class="top-icon" alt="more" title="More">
+            <img src="./images/notification.png" id="nav-notification" class="top-icon" alt="notification" title="Notification">
+            <img src="./images/nilava.jpeg" id="nav-profile" class="top-icon user-icon" alt="profile" title="Profile">
         </div>
     </nav>
+    
+    <!-- Dialog Box -->
+    <div id="micDialog" class="mic-dialog">
+        <div class="mic-dialog-content">
+            <p>Hey, This is Era!! Here to Help You</p>
+            <button onclick="closeDialog()">Close</button>
+        </div>
+    </div>
 
     <!-- Side Bar -->
 
      <div class="sidebar">
          <div class="shortcut-links">
-             <a href="#"><img src="./images/home.png"><p>Home</p></a>
-             <a href="#"><img src="./images/explore.png"><p>explore</p></a>
-             <a href="#"><img src="./images/subscriprion.png"><p>subscriprion</p></a>
-             <hr>
-             <a href="#"><img src="./images/library.png"><p>library</p></a>
-             <a href="#"><img src="./images/history.png"><p>History</p></a>
-             <a href="#"><img src="./images/playlist.png"><p>playlist</p></a>
-             <a href="#"><img src="./images/messages.png"><p>messages</p></a>
-             <a href="#"><img src="./images/show-more.png"><p>Show more</p></a>
+            <a href="#" id="nav-home" class="nav-item"><img src="./images/home.png"><p title="Home">Home</p></a>
+            <a href="#" id="nav-explore" class="nav-item"><img src="./images/explore.png"><p title="Explore">Explore</p></a>
+            <a href="#" id="nav-subs" class="nav-item"><img src="./images/subscriprion.png"><p title="Subscription">Subscription</p></a>
+            <a href="#" id="nav-library" class="nav-item"><img src="./images/library.png"><p title="Library">Library</p></a>
+            <a href="#" id="nav-history" class="nav-item"><img src="./images/history.png"><p title="History">History</p></a>
+            <a href="#" id="nav-playlist"  class="nav-item"><img src="./images/playlist.png"><p title="Playlist">Playlist</p></a>
+            <a href="#" id="nav-messages" class="nav-item"><img src="./images/messages.png"><p title="Messages">Messages</p></a>
+            <a href="#" id="nav-showmore" class="nav-item"><img src="./images/show-more.png"><p title="Show[]">Show more</p></a>
              <hr>
             </div>
           <div class="subscribed-list">
@@ -55,263 +67,38 @@
             </div>
         </div>
 
+        <div id="statusText"></div>
+
+
 <!-- Main Body -->
 <div class="container">
+    <h1>Filter videos</h1>
+    <div class="filter-bar">
+        <button class="filter-btn active">All</button>
+        <button class="filter-btn">Music</button>
+        <button class="filter-btn">Live</button>
+        <button class="filter-btn">Gaming</button>
+        <button class="filter-btn">News</button>
+        <button class="filter-btn">Nature</button>
+        <button class="filter-btn">Tech</button>
+</div>
     <div class="banner">
         <img src="./images/banner.png" alt="" srcset="">
     </div>
-    <div class="list-container">
-       <div class="vid-list">
-           <a href="video-1.html"> <img src="./images/thumbnail1.png" class="thumbnail" ></a>
-           <div class="flex-div">
-               <img src="./images/nilava.jpeg">
-               <div class="vid-info">
-                   <a href="video-1.html">Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro, nobis?</a>
-                   <p>Avalin</p>
-                   <p>2k Views &bull; 2 days</p>
-               </div>
-           </div>
-       </div>
-     
-       <div class="vid-list">
-        <a href="video-2.html"> <img src="./images/thumbnail2.png" class="thumbnail" ></a>
-        <div class="flex-div">
-            <img src="./images/nilava.jpeg">
-            <div class="vid-info">
-                <a href="video-2.html">Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro, nobis?</a>
-                <p>Ava</p>
-                <p>2k Views &bull; 2 days</p>
-            </div>
-        </div>
-    </div>
-
-    <div class="vid-list">
-        <a href="video-3.html"> <img src="./images/thumbnail3.png" class="thumbnail" ></a>
-        <div class="flex-div">
-            <img src="./images/nilava.jpeg">
-            <div class="vid-info">
-                <a href="video-3.html">Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro, nobis?</a>
-                <p>Avalin</p>
-                <p>2k Views &bull; 2 days</p>
-            </div>
-        </div>
-    </div>
-
-    <div class="vid-list">
-        <a href="#"> <img src="./images/thumbnail4.png" class="thumbnail" ></a>
-        <div class="flex-div">
-            <img src="./images/nilava.jpeg">
-            <div class="vid-info">
-                <a href="#">Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro, nobis?</a>
-                <p>Avalin</p>
-                <p>2k Views &bull; 2 days</p>
-            </div>
-        </div>
-    </div>
-
-    <div class="vid-list">
-        <a href="#"> <img src="./images/thumbnail5.png" class="thumbnail" ></a>
-        <div class="flex-div">
-            <img src="./images/nilava.jpeg">
-            <div class="vid-info">
-                <a href="#">Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro, nobis?</a>
-                <p>Avalin</p>
-                <p>2k Views &bull; 2 days</p>
-            </div>
-        </div>
-    </div>
-
-    <div class="vid-list">
-        <a href="#"> <img src="./images/thumbnail6.png" class="thumbnail" ></a>
-        <div class="flex-div">
-            <img src="./images/nilava.jpeg">
-            <div class="vid-info">
-                <a href="#">Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro, nobis?</a>
-                <p>Avalin</p>
-                <p>2k Views &bull; 2 days</p>
-            </div>
-        </div>
-    </div>
-
-    <div class="vid-list">
-        <a href="#"> <img src="./images/thumbnail7.png" class="thumbnail" ></a>
-        <div class="flex-div">
-            <img src="./images/nilava.jpeg">
-            <div class="vid-info">
-                <a href="#">Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro, nobis?</a>
-                <p>Avalin</p>
-                <p>2k Views &bull; 2 days</p>
-            </div>
-        </div>
-    </div>
-
-    <div class="vid-list">
-        <a href="#"> <img src="./images/thumbnail8.png" class="thumbnail" ></a>
-        <div class="flex-div">
-            <img src="./images/nilava.jpeg">
-            <div class="vid-info">
-                <a href="#">Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro, nobis?</a>
-                <p>Avalin</p>
-                <p>2k Views &bull; 2 days</p>
-            </div>
-        </div>
-    </div>
-
-
-        <div class="vid-list">
-        <a href="video-9.html"> <img src="./images/thumbnail9.png" class="thumbnail" ></a>
-        <div class="flex-div">
-            <img src="./images/nilava.jpeg">
-            <div class="vid-info">
-                <a href="video-9.html">Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro, nobis?</a>
-                <p>Avalin</p>
-                <p>2k Views &bull; 2 days</p>
-            </div>
-        </div>
-    </div>  
+    <div>
+        <div id="videoGrid" class="video-grid"></div>
+      </div>
     
-    <div class="vid-list">
-        <a href="#"> <img src="./images/thumbnail10.png" class="thumbnail" ></a>
-        <div class="flex-div">
-            <img src="./images/nilava.jpeg">
-            <div class="vid-info">
-                <a href="#">Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro, nobis?</a>
-                <p>Avalin</p>
-                <p>2k Views &bull; 2 days</p>
-            </div>
-        </div>
+      <div id="videoModal" class="modal" onclick="closeModal()">
+        <video id="videoPlayer" class="video-player" controls autoplay>
+          Your browser does not support the video tag.
+        </video>
+      </div>
     </div>
-
-    <div class="vid-list">
-        <a href="video-11.html"> <img src="./images/thumbnail11.png" class="thumbnail" ></a>
-        <div class="flex-div">
-            <img src="./images/nilava.jpeg">
-            <div class="vid-info">
-                <a href="video-11.html">Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro, nobis?</a>
-                <p>Avalin</p>
-                <p>2k Views &bull; 2 days</p>
-            </div>
-        </div>
-    </div>
-
-    <div class="vid-list">
-        <a href="video-12.html"> <img src="./images/thumbnail12.png" class="thumbnail" ></a>
-        <div class="flex-div">
-            <img src="./images/nilava.jpeg">
-            <div class="vid-info">
-                <a href="video-12.html">Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro, nobis?</a>
-                <p>Avalin</p>
-                <p>2k Views &bull; 2 days</p>
-            </div>
-        </div>
-    </div>
-
-    <div class="vid-list">
-        <a href="#"> <img src="./images/thumbnail13.png" class="thumbnail" ></a>
-        <div class="flex-div">
-            <img src="./images/nilava.jpeg">
-            <div class="vid-info">
-                <a href="#">Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro, nobis?</a>
-                <p>Avalin</p>
-                <p>2k Views &bull; 2 days</p>
-            </div>
-        </div>
-    </div>
-
-    <div class="vid-list">
-        <a href="#"> <img src="./images/thumbnail14.png" class="thumbnail" ></a>
-        <div class="flex-div">
-            <img src="./images/nilava.jpeg">
-            <div class="vid-info">
-                <a href="#">Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro, nobis?</a>
-                <p>Avalin</p>
-                <p>2k Views &bull; 2 days</p>
-            </div>
-        </div>
-    </div>
-
-    <div class="vid-list">
-        <a href="#"> <img src="./images/thumbnail15.png" class="thumbnail" ></a>
-        <div class="flex-div">
-            <img src="./images/nilava.jpeg">
-            <div class="vid-info">
-                <a href="#">Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro, nobis?</a>
-                <p>Avalin</p>
-                <p>2k Views &bull; 2 days</p>
-            </div>
-        </div>
-    </div>
-
-    <div class="vid-list">
-        <a href="#"> <img src="./images/thumbnail16.png" class="thumbnail" ></a>
-        <div class="flex-div">
-            <img src="./images/nilava.jpeg">
-            <div class="vid-info">
-                <a href="#">Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro, nobis?</a>
-                <p>Avalin</p>
-                <p>2k Views &bull; 2 days</p>
-            </div>
-        </div>
-    </div>
-
-    <div class="vid-list">
-        <a href="#"> <img src="./images/thumbnail17.png" class="thumbnail" ></a>
-        <div class="flex-div">
-            <img src="./images/nilava.jpeg">
-            <div class="vid-info">
-                <a href="#">Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro, nobis?</a>
-                <p>Avalin</p>
-                <p>2k Views &bull; 2 days</p>
-            </div>
-        </div>
-    </div>
-
-    <div class="vid-list">
-        <a href="#"> <img src="./images/thumbnail18.png" class="thumbnail" ></a>
-        <div class="flex-div">
-            <img src="./images/nilava.jpeg">
-            <div class="vid-info">
-                <a href="#">Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro, nobis?</a>
-                <p>Avalin</p>
-                <p>2k Views &bull; 2 days</p>
-            </div>
-        </div>
-    </div>
-
-    <div class="vid-list">
-        <a href="#"> <img src="./images/thumbnail19.png" class="thumbnail" ></a>
-        <div class="flex-div">
-            <img src="./images/nilava.jpeg">
-            <div class="vid-info">
-                <a href="#">Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro, nobis?</a>
-                <p>Avalin</p>
-                <p>2k Views &bull; 2 days</p>
-            </div>
-        </div>
-    </div>
-
-    <div class="vid-list">
-        <a href="#"> <img src="./images/thumbnail20.png" class="thumbnail" ></a>
-        <div class="flex-div">
-            <img src="./images/nilava.jpeg">
-            <div class="vid-info">
-                <a href="#">Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro, nobis?</a>
-                <p>Avalin</p>
-                <p>2k Views &bull; 2 days</p>
-            </div>
-        </div>
-    </div>
-
-
-    </div>
-
-
-
 </div>
 
-
-<script src="side-bar.js"></script>
-
+<script src="side-bar.js">
+</script>
 
 </body>
 </html>
